@@ -1,17 +1,20 @@
 .App {
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
     width: 100%;
     height: 100%;
 }
 
 .Container {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    user-select: none;
 }
 
 .Clock {
@@ -23,6 +26,76 @@
 
 .Date {
     font-size: 1.5em;
+    font-weight: 400;
+    font-style: normal;
+    font-optical-sizing: auto;
+}
+
+.SettingsToggle {
+    width: 1.5em;
+    height: 1.5em;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 1em;
+    right: 1em;
+    cursor: pointer;
+    border-radius: 0.4em;
+}
+
+.SettingsToggle:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.SettingsModal {
+    position: fixed;
+    top: 50vh;
+    left: 50vw;
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 1em;
+    padding: 1em;
+    width: 45ex;
+}
+
+.SettingsModal * {
+    margin: 0 -1em;
+    width: 100%;
+}
+
+.SettingsModal .CloseButton {
+    height: 1px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.SettingsModal .CloseButton * {
+    width: min-content;
+    cursor: pointer;
+}
+.SettingsModal .CloseButton *:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 0.2em;
+}
+
+.SettingsModal .Label {
+    font-size: 1.5em;
+    font-weight: 400;
+    font-style: normal;
+    font-optical-sizing: auto;
+}
+
+.SettingsModal .TextInput {
+    height: 2em;
+    padding: 0.5em;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 0.5em;
+    font-size: 1em;
     font-weight: 400;
     font-style: normal;
     font-optical-sizing: auto;
